@@ -1,0 +1,134 @@
+.layout {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 0;
+  min-height: 360px;
+}
+
+.tabs {
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid var(--border);
+}
+
+.tab {
+  padding: 14px 20px;
+  text-align: left;
+  border-left: 2px solid transparent;
+  border-bottom: 1px solid var(--border);
+  transition: all 0.2s;
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.tab:hover {
+  background: var(--surface);
+  color: var(--text);
+}
+.tab:last-child { border-bottom: none; }
+
+.tabActive {
+  background: var(--surface);
+}
+
+.tabCompany {
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.tabType {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--text3);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.content {
+  padding: 28px 0 28px 40px;
+  animation: fadeIn 0.3s ease;
+}
+
+.header {
+  margin-bottom: 28px;
+}
+
+.role {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 10px;
+}
+
+.atCompany { font-weight: 700; }
+
+.meta {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.metaItem {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text3);
+}
+
+.points {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 28px;
+}
+
+.point {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  font-size: 14px;
+  color: var(--text2);
+  line-height: 1.7;
+}
+
+.techRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+@media (max-width: 768px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+  .tabs {
+    flex-direction: row;
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .tabs::-webkit-scrollbar { display: none; }
+  .tab {
+    border-left: none;
+    border-bottom: 2px solid transparent;
+    white-space: nowrap;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+  }
+  .tabActive {
+    border-bottom-color: var(--accent) !important;
+  }
+  .content {
+    padding: 28px 0;
+  }
+}

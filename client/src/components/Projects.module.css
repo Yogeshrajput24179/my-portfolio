@@ -1,0 +1,116 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+  overflow: hidden;
+  animation: fadeUp 0.5s ease both;
+}
+.card:hover {
+  border-color: var(--accent)55;
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(88, 166, 255, 0.07);
+}
+
+.topLine {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent), var(--accent2));
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+.card:hover .topLine { opacity: 1; }
+
+.cardTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.folderIcon { opacity: 0.8; }
+
+.links {
+  display: flex;
+  gap: 12px;
+}
+
+.iconLink {
+  color: var(--text3);
+  transition: color 0.2s, transform 0.2s;
+  display: flex;
+}
+.iconLink:hover {
+  color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 12px;
+  transition: color 0.2s;
+}
+.card:hover .title { color: var(--accent); }
+
+.desc {
+  font-size: 13.5px;
+  color: var(--text2);
+  line-height: 1.75;
+  flex: 1;
+  margin-bottom: 24px;
+}
+
+.techRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: auto;
+}
+
+.tech {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--accent);
+  padding: 2px 0;
+}
+.tech::after { content: " ·"; color: var(--text3); margin-left: 6px; }
+.tech:last-child::after { content: ""; }
+
+.loading {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--text3);
+  font-family: var(--font-mono);
+  font-size: 14px;
+  padding: 60px 0;
+}
+
+.spinner {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+.footer {
+  margin-top: 48px;
+  display: flex;
+  justify-content: center;
+}

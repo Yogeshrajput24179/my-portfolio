@@ -1,0 +1,189 @@
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  padding: 0 32px;
+}
+
+.grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(var(--border) 1px, transparent 1px),
+    linear-gradient(90deg, var(--border) 1px, transparent 1px);
+  background-size: 64px 64px;
+  opacity: 0.25;
+  mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black, transparent);
+}
+
+.glow {
+  position: absolute;
+  top: 20%;
+  left: -10%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(88, 166, 255, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.content {
+  max-width: 1100px;
+  margin: 0 auto;
+  width: 100%;
+  padding-top: 80px;
+}
+
+.greeting {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  color: var(--accent);
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  opacity: 0;
+  animation: fadeUp 0.6s ease forwards;
+}
+
+.greetingLine {
+  display: block;
+  width: 40px;
+  height: 1px;
+  background: var(--accent);
+}
+
+.name {
+  font-family: var(--font-display);
+  font-size: clamp(3.5rem, 10vw, 7rem);
+  font-weight: 800;
+  color: var(--text);
+  line-height: 1.0;
+  margin-bottom: 8px;
+  position: relative;
+  display: inline-block;
+  opacity: 0;
+  animation: fadeUp 0.6s ease 0.1s forwards;
+}
+
+.nameGlitch {
+  position: absolute;
+  top: 0; left: 0;
+  color: var(--accent);
+  opacity: 0;
+}
+.name:hover .nameGlitch {
+  animation: glitch 0.3s steps(2) 1;
+  opacity: 0.8;
+}
+
+.role {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 4vw, 3rem);
+  font-weight: 700;
+  color: var(--text2);
+  margin-bottom: 28px;
+  min-height: 1.2em;
+  opacity: 0;
+  animation: fadeUp 0.6s ease 0.2s forwards;
+}
+
+.roleText { color: var(--text2); }
+
+.cursor {
+  color: var(--accent);
+  animation: blink 1s step-end infinite;
+  font-weight: 300;
+}
+
+.bio {
+  max-width: 540px;
+  font-size: 16px;
+  color: var(--text2);
+  line-height: 1.8;
+  margin-bottom: 40px;
+  opacity: 0;
+  animation: fadeUp 0.6s ease 0.35s forwards;
+}
+
+.highlight {
+  color: var(--accent);
+  font-weight: 500;
+}
+
+.actions {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 64px;
+  opacity: 0;
+  animation: fadeUp 0.6s ease 0.45s forwards;
+  flex-wrap: wrap;
+}
+
+.socials {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: flex-start;
+  opacity: 0;
+  animation: fadeUp 0.6s ease 0.55s forwards;
+}
+
+/* Vertical social bar — left aligned */
+.socials {
+  flex-direction: row;
+  align-items: center;
+}
+
+.socialLink {
+  color: var(--text3);
+  transition: color 0.2s, transform 0.2s;
+  display: flex;
+}
+.socialLink:hover {
+  color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.socialLine {
+  flex: 1;
+  max-width: 80px;
+  height: 1px;
+  background: var(--border);
+}
+
+.scrollDown {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: var(--text3);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  transition: color 0.2s;
+  animation: fadeIn 1s ease 1s both;
+}
+.scrollDown:hover { color: var(--accent); }
+
+.scrollDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  animation: gridFloat 2s ease-in-out infinite;
+}
+
+.scrollText { writing-mode: vertical-rl; }
+
+@media (max-width: 768px) {
+  .hero { padding: 0 20px; }
+  .actions { flex-direction: column; align-items: flex-start; }
+}
