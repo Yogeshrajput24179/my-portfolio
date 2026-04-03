@@ -14,33 +14,30 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+    defaults:
+      run:
+        working-directory: client   # 🔥 MOST IMPORTANT
 
-      - name: Setup Node
-        uses: actions/setup-node@v4
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
         with:
           node-version: 20
 
-      - name: Install dependencies
-        run: cd client && npm install
+      - run: npm install
+      - run: npm run build
 
-      - name: Build project
-        run: cd client && npm run build
-
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+      - uses: actions/upload-pages-artifact@v3
         with:
-          path: ./client/dist
+          path: client/dist   # 🔥 correct path
 
   deploy:
     needs: build
     runs-on: ubuntu-latest
 
     environment:
-      name: github-pages  
+      name: github-pages
 
     steps:
-      - name: Deploy to GitHub Pages
-        uses: actions/deploy-pages@v4
+      - uses: actions/deploy-pages@v4
