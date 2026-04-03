@@ -65,10 +65,10 @@ export default function Contact() {
           </div>
 
           <div className={styles.socials}>
-            <a href="https://github.com/yogesh" target="_blank" rel="noreferrer" className={styles.socialBtn}>
+            <a href="https://github.com/Yogeshrajput24179" target="_blank" rel="noreferrer" className={styles.socialBtn}>
               <Github size={18} /> GitHub
             </a>
-            <a href="https://linkedin.com/in/yogesh" target="_blank" rel="noreferrer" className={styles.socialBtn}>
+            <a href="https://www.linkedin.com/in/yogesh-rajput-467989249/" target="_blank" rel="noreferrer" className={styles.socialBtn}>
               <Linkedin size={18} /> LinkedIn
             </a>
           </div>
