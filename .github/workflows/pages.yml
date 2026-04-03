@@ -16,21 +16,30 @@ jobs:
 
     defaults:
       run:
-        working-directory: client   # 🔥 MOST IMPORTANT
+        working-directory: client   # 🔥 KEY FIX
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
 
-      - uses: actions/setup-node@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
         with:
           node-version: 20
 
-      - run: npm install
-      - run: npm run build
+      - name: Install dependencies
+        run: npm install
 
-      - uses: actions/upload-pages-artifact@v3
+      - name: Build project
+        run: npm run build
+
+      - name: Check dist folder
+        run: ls -la
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          path: client/dist   # 🔥 correct path
+          path: client/dist 
 
   deploy:
     needs: build
@@ -40,4 +49,5 @@ jobs:
       name: github-pages
 
     steps:
-      - uses: actions/deploy-pages@v4
+      - name: Deploy
+        uses: actions/deploy-pages@v4
