@@ -70,7 +70,7 @@ export default function Navbar() {
           {/* Resume */}
           <li>
             <a
-              href="/my-portfolio/Yogesh_Resume.pdf"
+              href="/my-portfolio/yogeshResume(2).pdf"
               download
               className={styles.resumeBtn}
             >
