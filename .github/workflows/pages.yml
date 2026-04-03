@@ -24,10 +24,10 @@ jobs:
           node-version: 20
 
       - name: Install dependencies
-        run: npm run install:all
+        run: cd client && npm install
 
       - name: Build project
-        run: npm run build
+        run: cd client && npm run build
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
@@ -38,8 +38,8 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
 
- environment:
-    name: github-pages 
+    environment:
+      name: github-pages  
 
     steps:
       - name: Deploy to GitHub Pages
