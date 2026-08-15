@@ -6,7 +6,7 @@ const experiences = [
   {
     company:    "eCareSoftech",
     role:       "Software Engineer",
-    period:     "Aug 2025 – Present",
+    period:     "July 2024 – Present",
     location:   "Jaipur, India",
     type:       "Full-time",
     color:      "#58a6ff",
@@ -16,20 +16,6 @@ const experiences = [
       "Integrated REST APIs and performed debugging and testing, reducing production issues by 20%.",
     ],
     tech: ["ReactJS", "Next.js", "Node.js", "SQL"],
-  },
-  {
-    company:    "Maruti Suzuki India Limited",
-    role:       "Software Engineer Intern",
-    period:     "Jan 2024 – Jun 2024",
-    location:   "Gurgaon, India",
-    type:       "Internship",
-    color:      "#3fb950",
-    points: [
-      "Developed web modules using ReactJS, JavaScript, HTML, and CSS following modern UI standards.",
-      "Supported backend logic with Node.js and SQL, optimizing reusable components to reduce dev time by 15%.",
-      "Assisted in testing and debugging to improve system stability across multiple modules.",
-    ],
-    tech: ["ReactJS", "Node.js", "JavaScript", "SQL", "HTML", "CSS"],
   },
   {
     company:    "DUCAT",
